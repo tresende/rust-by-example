@@ -3,16 +3,18 @@ struct Person {
     name: String,
 }
 
+impl Person {
+    fn hello(&self) -> String {
+        format!("my name is {} and i am {} years ", self.name, self.age)
+    }
+}
+
 fn sum(x: i32, y: i32) -> i32 {
     x + y
 }
 
 fn hello(person: Person) {
-    println!(
-        "my name is {name} and i am {age} years ",
-        name = person.name,
-        age = person.age
-    )
+    println!("{}", person.hello())
 }
 
 fn main() {
