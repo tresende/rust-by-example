@@ -1,19 +1,26 @@
-//
+struct Person {
+    age: i32,
+    name: String,
+}
 
-fn sum(x: u64, y: u64) -> u64 {
+fn sum(x: i32, y: i32) -> i32 {
     x + y
 }
 
-fn hello(name: String, age: u64) {
+fn hello(person: Person) {
     println!(
         "my name is {name} and i am {age} years ",
-        name = name,
-        age = age
+        name = person.name,
+        age = person.age
     )
 }
 
 fn main() {
-    let name = String::from("Thiago");
     let age = sum(10, 18);
-    hello(name, age)
+    let person = Person {
+        name: "Thiago".to_string(),
+        age: age,
+    };
+
+    hello(person)
 }
